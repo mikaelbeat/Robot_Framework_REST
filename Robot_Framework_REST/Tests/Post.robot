@@ -20,4 +20,3 @@ Test run
 Post test
     Test run
 #    robot -d results tests/post.robot
-

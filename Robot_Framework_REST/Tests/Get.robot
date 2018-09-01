@@ -21,5 +21,3 @@ Test run
 Get test
     Test run
     #    robot -d results tests/get.robot
-
-
