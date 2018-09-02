@@ -2,9 +2,8 @@
 <projectConfiguration>
     <configVersion>2</configVersion>
     <relativeTo>WORKSPACE</relativeTo>
-    <referencedLibrary type="PYTHON" name="SeleniumLibrary" path="C:/Python27/Lib/site-packages"/>
-    <referencedLibrary type="PYTHON" name="RequestsLibrary" path="C:/Python27/Lib/site-packages"/>
-    <referencedLibrary type="PYTHON" name="DiffLibrary" path="C:/Python27/Lib/site-packages"/>
+    <referencedLibrary type="PYTHON" name="DiffLibrary" path="C:/Python37-32/Lib/site-packages"/>
+    <referencedLibrary type="PYTHON" name="RequestsLibrary" path="C:/Python37-32/Lib/site-packages"/>
     <pythonpath/>
     <classpath/>
     <excludedForValidation/>

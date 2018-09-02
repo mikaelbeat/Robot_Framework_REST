@@ -14,11 +14,4 @@
 	<natures>
 		<nature>org.robotframework.ide.eclipse.main.plugin.robotNature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>libspecs/OperatingSystem.py</name>
-			<type>1</type>
-			<location>C:/Python27/lib/site-packages/robot/libraries/OperatingSystem.py</location>
-		</link>
-	</linkedResources>
 </projectDescription>
