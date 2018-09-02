@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20180901 22:10:44.173" generator="Robot 3.0.4 (Python 2.7.14 on win32)">
-<suite source="C:\Users\petri.ryynanen\eclipse-workspace\Robot_Framework_REST\tests\put.robot" id="s1" name="Put">
+<robot generated="20180902 19:18:29.633" generator="Robot 3.0.4 (Python 2.7.14 on win32)">
+<suite source="C:\Users\petri.ryynanen\git\Robot_Framework_REST\Robot_Framework_REST\tests\put.robot" id="s1" name="Put">
 <test id="s1-t1" name="Put test">
 <kw name="Test run">
 <kw name="Get Binary File" library="OperatingSystem">
@@ -11,9 +11,9 @@
 <assign>
 <var>${payload}</var>
 </assign>
-<msg timestamp="20180901 22:10:44.424" html="yes" level="INFO">Getting file '&lt;a href="file://C:\Users\petri.ryynanen\eclipse-workspace\Robot_Framework_REST\Payloads\Update_user.Json"&gt;C:\Users\petri.ryynanen\eclipse-workspace\Robot_Framework_REST\Payloads\Update_user.Json&lt;/a&gt;'.</msg>
-<msg timestamp="20180901 22:10:44.425" level="INFO">${payload} = {"id":"221","createdAt":"2018-09-01T16:57:25.803Z"}</msg>
-<status status="PASS" endtime="20180901 22:10:44.425" starttime="20180901 22:10:44.424"></status>
+<msg timestamp="20180902 19:18:29.979" html="yes" level="INFO">Getting file '&lt;a href="file://C:\Users\petri.ryynanen\eclipse-workspace\Robot_Framework_REST\Payloads\Update_user.Json"&gt;C:\Users\petri.ryynanen\eclipse-workspace\Robot_Framework_REST\Payloads\Update_user.Json&lt;/a&gt;'.</msg>
+<msg timestamp="20180902 19:18:29.980" level="INFO">${payload} = {"id":"221","createdAt":"2018-09-01T16:57:25.803Z"}</msg>
+<status status="PASS" endtime="20180902 19:18:29.980" starttime="20180902 19:18:29.978"></status>
 </kw>
 <kw name="Create Session" library="RequestsLibrary">
 <doc>Create Session: create a HTTP session to a server</doc>
@@ -22,8 +22,8 @@
 <arg>https://reqres.in</arg>
 <arg>verify=true</arg>
 </arguments>
-<msg timestamp="20180901 22:10:44.426" level="INFO">Creating Session using : alias=putSession, url=https://reqres.in, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=true,                     debug=0 </msg>
-<status status="PASS" endtime="20180901 22:10:44.426" starttime="20180901 22:10:44.425"></status>
+<msg timestamp="20180902 19:18:29.980" level="INFO">Creating Session using : alias=putSession, url=https://reqres.in, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=true,                     debug=0 </msg>
+<status status="PASS" endtime="20180902 19:18:29.981" starttime="20180902 19:18:29.980"></status>
 </kw>
 <kw name="Post Request" library="RequestsLibrary">
 <doc>Send a POST request on the session object found using the</doc>
@@ -35,25 +35,25 @@
 <assign>
 <var>${response}</var>
 </assign>
-<msg timestamp="20180901 22:10:45.283" level="INFO">Post Request using : alias=putSession, uri=/api/users/2, data=&lt;empty&gt;, headers=None, files=None, allow_redirects=True </msg>
-<msg timestamp="20180901 22:10:45.283" level="INFO">${response} = &lt;Response [201]&gt;</msg>
-<status status="PASS" endtime="20180901 22:10:45.284" starttime="20180901 22:10:44.426"></status>
+<msg timestamp="20180902 19:18:31.029" level="INFO">Post Request using : alias=putSession, uri=/api/users/2, data=&lt;empty&gt;, headers=None, files=None, allow_redirects=True </msg>
+<msg timestamp="20180902 19:18:31.030" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" endtime="20180902 19:18:31.030" starttime="20180902 19:18:29.981"></status>
 </kw>
 <kw name="Log" library="BuiltIn">
 <doc>Logs the given message with the given level.</doc>
 <arguments>
 <arg>${response.status_code}</arg>
 </arguments>
-<msg timestamp="20180901 22:10:45.285" level="INFO">201</msg>
-<status status="PASS" endtime="20180901 22:10:45.286" starttime="20180901 22:10:45.284"></status>
+<msg timestamp="20180902 19:18:31.032" level="INFO">201</msg>
+<status status="PASS" endtime="20180902 19:18:31.033" starttime="20180902 19:18:31.031"></status>
 </kw>
 <kw name="Log" library="BuiltIn">
 <doc>Logs the given message with the given level.</doc>
 <arguments>
 <arg>${response.text}</arg>
 </arguments>
-<msg timestamp="20180901 22:10:45.287" level="INFO">{"id":"789","createdAt":"2018-09-01T19:12:47.747Z"}</msg>
-<status status="PASS" endtime="20180901 22:10:45.288" starttime="20180901 22:10:45.286"></status>
+<msg timestamp="20180902 19:18:31.034" level="INFO">{"id":"714","createdAt":"2018-09-02T16:20:33.954Z"}</msg>
+<status status="PASS" endtime="20180902 19:18:31.034" starttime="20180902 19:18:31.033"></status>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <doc>Fails if objects are unequal after converting them to strings.</doc>
@@ -61,10 +61,10 @@
 <arg>${response.status_code}</arg>
 <arg>201</arg>
 </arguments>
-<msg timestamp="20180901 22:10:45.289" level="INFO">Argument types are:
+<msg timestamp="20180902 19:18:31.036" level="INFO">Argument types are:
 &lt;type 'int'&gt;
 &lt;type 'unicode'&gt;</msg>
-<status status="PASS" endtime="20180901 22:10:45.290" starttime="20180901 22:10:45.288"></status>
+<status status="PASS" endtime="20180902 19:18:31.036" starttime="20180902 19:18:31.035"></status>
 </kw>
 <kw name="Should Contain" library="BuiltIn">
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
@@ -72,7 +72,7 @@
 <arg>${response.text}</arg>
 <arg>createdAt</arg>
 </arguments>
-<status status="PASS" endtime="20180901 22:10:45.292" starttime="20180901 22:10:45.290"></status>
+<status status="PASS" endtime="20180902 19:18:31.038" starttime="20180902 19:18:31.037"></status>
 </kw>
 <kw name="To Json" library="RequestsLibrary">
 <doc>Convert a string to a JSON object</doc>
@@ -83,37 +83,37 @@
 <assign>
 <var>${pretty_printed_response}</var>
 </assign>
-<msg timestamp="20180901 22:10:45.294" level="INFO">To JSON using : content={"id":"789","createdAt":"2018-09-01T19:12:47.747Z"} </msg>
-<msg timestamp="20180901 22:10:45.294" level="INFO">To JSON using : pretty_print=true </msg>
-<msg timestamp="20180901 22:10:45.294" level="INFO">${pretty_printed_response} = {
-    "createdAt": "2018-09-01T19:12:47.747Z",
-    "id": "789"
+<msg timestamp="20180902 19:18:31.040" level="INFO">To JSON using : content={"id":"714","createdAt":"2018-09-02T16:20:33.954Z"} </msg>
+<msg timestamp="20180902 19:18:31.040" level="INFO">To JSON using : pretty_print=true </msg>
+<msg timestamp="20180902 19:18:31.040" level="INFO">${pretty_printed_response} = {
+    "createdAt": "2018-09-02T16:20:33.954Z",
+    "id": "714"
 }</msg>
-<status status="PASS" endtime="20180901 22:10:45.294" starttime="20180901 22:10:45.292"></status>
+<status status="PASS" endtime="20180902 19:18:31.041" starttime="20180902 19:18:31.039"></status>
 </kw>
 <kw name="Create Binary File" library="OperatingSystem">
 <doc>Creates a binary file with the given content.</doc>
 <arguments>
-<arg>${save_response_location}</arg>
+<arg>${save_response_location}${saved_response}</arg>
 <arg>${pretty_printed_response}</arg>
 </arguments>
-<msg timestamp="20180901 22:10:45.307" html="yes" level="INFO">Created binary file '&lt;a href="file://C:\Users\petri.ryynanen\eclipse-workspace\Robot_Framework_REST\Put_response\saved_response.json"&gt;C:\Users\petri.ryynanen\eclipse-workspace\Robot_Framework_REST\Put_response\saved_response.json&lt;/a&gt;'.</msg>
-<status status="PASS" endtime="20180901 22:10:45.308" starttime="20180901 22:10:45.295"></status>
+<msg timestamp="20180902 19:18:31.053" html="yes" level="INFO">Created binary file '&lt;a href="file://C:\Users\petri.ryynanen\eclipse-workspace\Robot_Framework_REST\Responses\Put_test_response.json"&gt;C:\Users\petri.ryynanen\eclipse-workspace\Robot_Framework_REST\Responses\Put_test_response.json&lt;/a&gt;'.</msg>
+<status status="PASS" endtime="20180902 19:18:31.054" starttime="20180902 19:18:31.041"></status>
 </kw>
 <kw name="Get Binary File" library="OperatingSystem">
 <doc>Returns the contents of a specified file.</doc>
 <arguments>
-<arg>${save_response_location}</arg>
+<arg>${save_response_location}${saved_response}</arg>
 </arguments>
 <assign>
 <var>${response_to_be_edited}</var>
 </assign>
-<msg timestamp="20180901 22:10:45.311" html="yes" level="INFO">Getting file '&lt;a href="file://C:\Users\petri.ryynanen\eclipse-workspace\Robot_Framework_REST\Put_response\saved_response.json"&gt;C:\Users\petri.ryynanen\eclipse-workspace\Robot_Framework_REST\Put_response\saved_response.json&lt;/a&gt;'.</msg>
-<msg timestamp="20180901 22:10:45.313" level="INFO">${response_to_be_edited} = {
-    "createdAt": "2018-09-01T19:12:47.747Z",
-    "id": "789"
+<msg timestamp="20180902 19:18:31.056" html="yes" level="INFO">Getting file '&lt;a href="file://C:\Users\petri.ryynanen\eclipse-workspace\Robot_Framework_REST\Responses\Put_test_response.json"&gt;C:\Users\petri.ryynanen\eclipse-workspace\Robot_Framework_REST\Responses\Put_test_response.json&lt;/a&gt;'.</msg>
+<msg timestamp="20180902 19:18:31.058" level="INFO">${response_to_be_edited} = {
+    "createdAt": "2018-09-02T16:20:33.954Z",
+    "id": "714"
 }</msg>
-<status status="PASS" endtime="20180901 22:10:45.314" starttime="20180901 22:10:45.309"></status>
+<status status="PASS" endtime="20180902 19:18:31.058" starttime="20180902 19:18:31.055"></status>
 </kw>
 <kw name="Replace String Using Regexp" library="String">
 <doc>Replaces ``pattern`` in the given ``string`` with ``replace_with``.</doc>
@@ -125,11 +125,11 @@
 <assign>
 <var>${edited_response}</var>
 </assign>
-<msg timestamp="20180901 22:10:45.317" level="INFO">${edited_response} = {
+<msg timestamp="20180902 19:18:31.061" level="INFO">${edited_response} = {
     "createdAt": "edited_date",
-    "id": "789"
+    "id": "714"
 }</msg>
-<status status="PASS" endtime="20180901 22:10:45.318" starttime="20180901 22:10:45.314"></status>
+<status status="PASS" endtime="20180902 19:18:31.061" starttime="20180902 19:18:31.059"></status>
 </kw>
 <kw name="Replace String Using Regexp" library="String">
 <doc>Replaces ``pattern`` in the given ``string`` with ``replace_with``.</doc>
@@ -141,11 +141,11 @@
 <assign>
 <var>${final_response}</var>
 </assign>
-<msg timestamp="20180901 22:10:45.321" level="INFO">${final_response} = {
+<msg timestamp="20180902 19:18:31.063" level="INFO">${final_response} = {
     "createdAt": "edited_date",
     "id": "edited_id"
 }</msg>
-<status status="PASS" endtime="20180901 22:10:45.321" starttime="20180901 22:10:45.318"></status>
+<status status="PASS" endtime="20180902 19:18:31.064" starttime="20180902 19:18:31.062"></status>
 </kw>
 <kw name="Create Binary File" library="OperatingSystem">
 <doc>Creates a binary file with the given content.</doc>
@@ -153,35 +153,24 @@
 <arg>${save_response_location}</arg>
 <arg>${final_response}</arg>
 </arguments>
-<msg timestamp="20180901 22:10:45.325" html="yes" level="INFO">Created binary file '&lt;a href="file://C:\Users\petri.ryynanen\eclipse-workspace\Robot_Framework_REST\Put_response\saved_response.json"&gt;C:\Users\petri.ryynanen\eclipse-workspace\Robot_Framework_REST\Put_response\saved_response.json&lt;/a&gt;'.</msg>
-<status status="PASS" endtime="20180901 22:10:45.326" starttime="20180901 22:10:45.322"></status>
+<msg timestamp="20180902 19:18:31.072" level="FAIL">IOError: [Errno 13] Permission denied: u'C:\\Users\\petri.ryynanen\\eclipse-workspace\\Robot_Framework_REST\\Responses'</msg>
+<status status="FAIL" endtime="20180902 19:18:31.072" starttime="20180902 19:18:31.064"></status>
 </kw>
-<kw name="Diff Files" library="DiffLibrary">
-<doc>Diff two text files</doc>
-<arguments>
-<arg>${save_response_location}</arg>
-<arg>${expected_location}${expected_response}</arg>
-</arguments>
-<msg timestamp="20180901 22:10:45.327" level="INFO">file1: C:\Users\petri.ryynanen\eclipse-workspace\Robot_Framework_REST\Put_response\saved_response.json</msg>
-<msg timestamp="20180901 22:10:45.327" level="INFO">file2: C:\Users\petri.ryynanen\eclipse-workspace\Robot_Framework_REST\Expected\Put_response.json</msg>
-<msg timestamp="20180901 22:10:45.327" level="INFO">c:\python27\lib\site-packages\DiffLibrary\bin\diff\diff.exe --strip-trailing-cr  "C:\Users\petri.ryynanen\eclipse-workspace\Robot_Framework_REST\Put_response\saved_response.json" "C:\Users\petri.ryynanen\eclipse-workspace\Robot_Framework_REST\Expected\Put_response.json"</msg>
-<status status="PASS" endtime="20180901 22:10:45.552" starttime="20180901 22:10:45.326"></status>
+<status status="FAIL" endtime="20180902 19:18:31.073" starttime="20180902 19:18:29.976"></status>
 </kw>
-<status status="PASS" endtime="20180901 22:10:45.552" starttime="20180901 22:10:44.424"></status>
-</kw>
-<status status="PASS" endtime="20180901 22:10:45.553" critical="yes" starttime="20180901 22:10:44.423"></status>
+<status status="FAIL" endtime="20180902 19:18:31.074" critical="yes" starttime="20180902 19:18:29.975">IOError: [Errno 13] Permission denied: u'C:\\Users\\petri.ryynanen\\eclipse-workspace\\Robot_Framework_REST\\Responses'</status>
 </test>
-<status status="PASS" endtime="20180901 22:10:45.557" starttime="20180901 22:10:44.181"></status>
+<status status="FAIL" endtime="20180902 19:18:31.083" starttime="20180902 19:18:29.644"></status>
 </suite>
 <statistics>
 <total>
-<stat fail="0" pass="1">Critical Tests</stat>
-<stat fail="0" pass="1">All Tests</stat>
+<stat fail="1" pass="0">Critical Tests</stat>
+<stat fail="1" pass="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat fail="0" id="s1" name="Put" pass="1">Put</stat>
+<stat fail="1" id="s1" name="Put" pass="0">Put</stat>
 </suite>
 </statistics>
 <errors>

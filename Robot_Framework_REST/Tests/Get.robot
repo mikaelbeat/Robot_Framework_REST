@@ -6,6 +6,7 @@ Library    DiffLibrary
 *** Variables ***
 ${expected_location}    C:\\Users\\petri.ryynanen\\eclipse-workspace\\Robot_Framework_REST\\Expected\\
 ${expected_response}    Get_response.json
+${save_response_location}    C:\\Users\\petri.ryynanen\\eclipse-workspace\\Robot_Framework_REST\\Responses\\Get_test_response.json
 
 *** Keywords ***
 Test run
@@ -13,7 +14,17 @@ Test run
     ${response}    Get Request    getSession    /api/users?page=2
     log    ${response.status_code}
     log    ${response.text}
-    Should Be Equal As Strings    ${response.status_code}    200  
+    Should Be Equal As Strings    ${response.status_code}    200   
+    ${pretty_printed_response}    To Json    ${response.text}    true    
+    Create Binary File    ${save_response_location}    ${final_response}
+    Diff Files    ${save_response_location}    ${expected_location}${expected_response}  
+    
+    
+    
+    
+    
+    
+    
     ${expected_response}    Get Binary File    ${expected_location}${expected_response}
     Diff Outputs    ${response.text}    ${expected_response}          
 
