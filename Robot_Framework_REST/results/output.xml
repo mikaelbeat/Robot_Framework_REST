@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.0.4 (Python 3.7.0 on win32)" generated="20180902 23:39:55.947">
+<robot generator="Robot 3.0.4 (Python 3.7.0 on win32)" generated="20180903 22:15:13.047">
 <suite id="s1" name="Test" source="C:\Users\petri.ryynanen\git\Robot_Framework_REST\Robot_Framework_REST\tests\test.robot">
 <test id="s1-t1" name="Get test">
 <kw name="Test run">
 <kw name="Create File" library="OperatingSystem">
 <doc>Creates a file with the given content and encoding.</doc>
 <arguments>
-<arg>${save_response_location}</arg>
-<arg>${file}</arg>
+<arg>${save_response_location}apina.txt</arg>
+<arg>Kissa</arg>
 </arguments>
-<msg timestamp="20180902 23:39:56.123" level="FAIL">PermissionError: [Errno 13] Permission denied: 'C:\\Users\\petri.ryynanen\\eclipse-workspace\\Robot_Framework_REST\\Responses'</msg>
-<status status="FAIL" starttime="20180902 23:39:56.120" endtime="20180902 23:39:56.123"></status>
+<msg timestamp="20180903 22:15:13.307" level="INFO" html="yes">Created file '&lt;a href="file://C:\Users\petri.ryynanen\eclipse-workspace\Robot_Framework_REST\responsesapina.txt"&gt;C:\Users\petri.ryynanen\eclipse-workspace\Robot_Framework_REST\responsesapina.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20180903 22:15:13.307" endtime="20180903 22:15:13.311"></status>
 </kw>
-<status status="FAIL" starttime="20180902 23:39:56.119" endtime="20180902 23:39:56.123"></status>
+<status status="PASS" starttime="20180903 22:15:13.303" endtime="20180903 22:15:13.311"></status>
 </kw>
-<status status="FAIL" starttime="20180902 23:39:56.119" endtime="20180902 23:39:56.124" critical="yes">PermissionError: [Errno 13] Permission denied: 'C:\\Users\\petri.ryynanen\\eclipse-workspace\\Robot_Framework_REST\\Responses'</status>
+<status status="PASS" starttime="20180903 22:15:13.303" endtime="20180903 22:15:13.311" critical="yes"></status>
 </test>
-<status status="FAIL" starttime="20180902 23:39:55.952" endtime="20180902 23:39:56.125"></status>
+<status status="PASS" starttime="20180903 22:15:13.051" endtime="20180903 22:15:13.311"></status>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1">Critical Tests</stat>
-<stat pass="0" fail="1">All Tests</stat>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="0" fail="1" id="s1" name="Test">Test</stat>
+<stat pass="1" fail="0" id="s1" name="Test">Test</stat>
 </suite>
 </statistics>
 <errors>

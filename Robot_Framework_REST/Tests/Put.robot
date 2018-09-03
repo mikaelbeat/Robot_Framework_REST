@@ -5,11 +5,11 @@ Library    String
 Library    DiffLibrary      
 
 *** Variables ***
-${payload_location}    C:\\Users\\petri.ryynanen\\eclipse-workspace\\Robot_Framework_REST\\Payloads\\
+${payload_location}    C:\\Users\\petri.ryynanen\\eclipse-workspace\\Robot_Framework_REST\\payloads\\
 ${payload}    Update_user.Json 
-${expected_location}    C:\\Users\\petri.ryynanen\\eclipse-workspace\\Robot_Framework_REST\\Expected\\
+${expected_location}    C:\\Users\\petri.ryynanen\\eclipse-workspace\\Robot_Framework_REST\\expected\\
 ${expected_response}    Put_response.json
-${save_response_location}    C:\\Users\\petri.ryynanen\\eclipse-workspace\\Robot_Framework_REST\\Responses\\Put_response.json
+${save_response_location}    C:\\Users\\petri.ryynanen\\eclipse-workspace\\Robot_Framework_REST\\responses\\Put_response.json
 
 *** Keywords ***
 Test run

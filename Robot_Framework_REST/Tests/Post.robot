@@ -3,7 +3,7 @@ Library    RequestsLibrary
 Library    OperatingSystem      
 
 *** Variables ***
-${payload_location}    C:\\Users\\petri.ryynanen\\eclipse-workspace\\Robot_Framework_REST\\Payloads\\
+${payload_location}    C:\\Users\\petri.ryynanen\\eclipse-workspace\\Robot_Framework_REST\\payloads\\
 ${payload}    Create_user.Json 
 
 *** Keywords ***

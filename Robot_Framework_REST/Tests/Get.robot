@@ -4,9 +4,9 @@ Library    OperatingSystem
 Library    DiffLibrary     
 
 *** Variables ***
-${expected_location}    C:\\Users\\petri.ryynanen\\eclipse-workspace\\Robot_Framework_REST\\Expected\\
+${expected_location}    C:\\Users\\petri.ryynanen\\eclipse-workspace\\Robot_Framework_REST\\expected\\
 ${expected_response}    Get_response.json
-${save_response_location}    C:\\Users\\petri.ryynanen\\eclipse-workspace\\Robot_Framework_REST\\Responses\\Get_response.json
+${save_response_location}    C:\\Users\\petri.ryynanen\\eclipse-workspace\\Robot_Framework_REST\\responses\\
 
 *** Keywords ***
 Test run
@@ -16,10 +16,10 @@ Test run
     log    ${response.text}
     Should Be Equal As Strings    ${response.status_code}    200   
     ${pretty_printed_response}    To Json    ${response.text}    true    
-    Create Binary File    ${save_response_location}    ${pretty_printed_response}
+    Create File    ${save_response_location}Get_response.json    ${pretty_printed_response}
     ${expected_response}    Get Binary File    ${expected_location}${expected_response}
     ${saved_response}    Get Binary File    ${save_response_location}
-    Diff Outputs    ${saved_response}     ${expected_location}${expected_response}          
+    Diff Outputs    ${save_response_location}     ${expected_location}${expected_response}          
 
 *** Test Cases ***
 Get test
