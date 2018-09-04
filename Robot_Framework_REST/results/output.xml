@@ -1,57 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.0.4 (Python 3.7.0 on win32)" generated="20180903 23:24:12.044">
-<suite id="s1" name="Get" source="C:\Users\petri.ryynanen\git\Robot_Framework_REST\Robot_Framework_REST\tests\get.robot">
-<test id="s1-t1" name="Get test">
+<robot generator="Robot 3.0.4 (Python 3.7.0 on win32)" generated="20180904 23:43:23.911">
+<suite id="s1" name="Put" source="C:\Users\petri.ryynanen\git\Robot_Framework_REST\Robot_Framework_REST\tests\put.robot">
+<test id="s1-t1" name="Put test">
 <kw name="Test run">
+<kw name="Get Binary File" library="OperatingSystem">
+<doc>Returns the contents of a specified file.</doc>
+<arguments>
+<arg>${payload_location}${payload}</arg>
+</arguments>
+<assign>
+<var>${payload}</var>
+</assign>
+<msg timestamp="20180904 23:43:24.095" level="INFO" html="yes">Getting file '&lt;a href="file://C:\Users\petri.ryynanen\git\Robot_Framework_REST\Robot_Framework_REST\Payloads\Update_user.Json"&gt;C:\Users\petri.ryynanen\git\Robot_Framework_REST\Robot_Framework_REST\Payloads\Update_user.Json&lt;/a&gt;'.</msg>
+<msg timestamp="20180904 23:43:24.099" level="INFO">${payload} = {"id":"221","createdAt":"2018-09-01T16:57:25.803Z"}</msg>
+<status status="PASS" starttime="20180904 23:43:24.095" endtime="20180904 23:43:24.099"></status>
+</kw>
 <kw name="Create Session" library="RequestsLibrary">
 <doc>Create Session: create a HTTP session to a server</doc>
 <arguments>
-<arg>getSession</arg>
+<arg>putSession</arg>
 <arg>https://reqres.in</arg>
 <arg>verify=true</arg>
 </arguments>
-<msg timestamp="20180903 23:24:12.254" level="INFO">Creating Session using : alias=getSession, url=https://reqres.in, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=true,                     debug=0 </msg>
-<status status="PASS" starttime="20180903 23:24:12.254" endtime="20180903 23:24:12.254"></status>
+<msg timestamp="20180904 23:43:24.099" level="INFO">Creating Session using : alias=putSession, url=https://reqres.in, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=true,                     debug=0 </msg>
+<status status="PASS" starttime="20180904 23:43:24.099" endtime="20180904 23:43:24.099"></status>
 </kw>
-<kw name="Get Request" library="RequestsLibrary">
-<doc>Send a GET request on the session object found using the</doc>
+<kw name="Post Request" library="RequestsLibrary">
+<doc>Send a POST request on the session object found using the</doc>
 <arguments>
-<arg>getSession</arg>
-<arg>/api/users?page=2</arg>
+<arg>putSession</arg>
+<arg>/api/users/2</arg>
+<arg>${payload}</arg>
 </arguments>
 <assign>
 <var>${response}</var>
 </assign>
-<msg timestamp="20180903 23:24:12.794" level="INFO">Get Request using : alias=getSession, uri=/api/users?page=2, headers=None json=None</msg>
-<msg timestamp="20180903 23:24:12.794" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20180903 23:24:12.255" endtime="20180903 23:24:12.795"></status>
+<msg timestamp="20180904 23:43:24.599" level="INFO">Post Request using : alias=putSession, uri=/api/users/2, data=&lt;empty&gt;, headers=None, files=None, allow_redirects=True </msg>
+<msg timestamp="20180904 23:43:24.599" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20180904 23:43:24.099" endtime="20180904 23:43:24.599"></status>
 </kw>
 <kw name="Log" library="BuiltIn">
 <doc>Logs the given message with the given level.</doc>
 <arguments>
 <arg>${response.status_code}</arg>
 </arguments>
-<msg timestamp="20180903 23:24:12.797" level="INFO">200</msg>
-<status status="PASS" starttime="20180903 23:24:12.795" endtime="20180903 23:24:12.798"></status>
+<msg timestamp="20180904 23:43:24.603" level="INFO">201</msg>
+<status status="PASS" starttime="20180904 23:43:24.599" endtime="20180904 23:43:24.603"></status>
 </kw>
 <kw name="Log" library="BuiltIn">
 <doc>Logs the given message with the given level.</doc>
 <arguments>
 <arg>${response.text}</arg>
 </arguments>
-<msg timestamp="20180903 23:24:12.800" level="INFO">{"page":2,"per_page":3,"total":12,"total_pages":4,"data":[{"id":4,"first_name":"Eve","last_name":"Holt","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg"},{"id":5,"first_name":"Charles","last_name":"Morris","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"},{"id":6,"first_name":"Tracey","last_name":"Ramos","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"}]}</msg>
-<status status="PASS" starttime="20180903 23:24:12.798" endtime="20180903 23:24:12.801"></status>
+<msg timestamp="20180904 23:43:24.603" level="INFO">{"id":"109","createdAt":"2018-09-04T20:45:29.231Z"}</msg>
+<status status="PASS" starttime="20180904 23:43:24.603" endtime="20180904 23:43:24.603"></status>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <doc>Fails if objects are unequal after converting them to strings.</doc>
 <arguments>
 <arg>${response.status_code}</arg>
-<arg>200</arg>
+<arg>201</arg>
 </arguments>
-<msg timestamp="20180903 23:24:12.804" level="INFO">Argument types are:
+<msg timestamp="20180904 23:43:24.603" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;type 'unicode'&gt;</msg>
-<status status="PASS" starttime="20180903 23:24:12.802" endtime="20180903 23:24:12.804"></status>
+<status status="PASS" starttime="20180904 23:43:24.603" endtime="20180904 23:43:24.607"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${response.text}</arg>
+<arg>createdAt</arg>
+</arguments>
+<status status="PASS" starttime="20180904 23:43:24.607" endtime="20180904 23:43:24.607"></status>
 </kw>
 <kw name="To Json" library="RequestsLibrary">
 <doc>Convert a string to a JSON object</doc>
@@ -62,43 +83,22 @@
 <assign>
 <var>${pretty_printed_response}</var>
 </assign>
-<msg timestamp="20180903 23:24:12.807" level="INFO">To JSON using : content={"page":2,"per_page":3,"total":12,"total_pages":4,"data":[{"id":4,"first_name":"Eve","last_name":"Holt","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg"},{"id":5,"first_name":"Charles","last_name":"Morris","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"},{"id":6,"first_name":"Tracey","last_name":"Ramos","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"}]} </msg>
-<msg timestamp="20180903 23:24:12.808" level="INFO">To JSON using : pretty_print=true </msg>
-<msg timestamp="20180903 23:24:12.808" level="INFO">${pretty_printed_response} = {
-    "data": [
-        {
-            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg",
-            "first_name": "Eve",
-            "id": 4,
-            "last_name": "H...</msg>
-<status status="PASS" starttime="20180903 23:24:12.805" endtime="20180903 23:24:12.808"></status>
+<msg timestamp="20180904 23:43:24.607" level="INFO">To JSON using : content={"id":"109","createdAt":"2018-09-04T20:45:29.231Z"} </msg>
+<msg timestamp="20180904 23:43:24.607" level="INFO">To JSON using : pretty_print=true </msg>
+<msg timestamp="20180904 23:43:24.607" level="INFO">${pretty_printed_response} = {
+    "createdAt": "2018-09-04T20:45:29.231Z",
+    "id": "109"
+}</msg>
+<status status="PASS" starttime="20180904 23:43:24.607" endtime="20180904 23:43:24.607"></status>
 </kw>
-<kw name="Create File" library="OperatingSystem">
-<doc>Creates a file with the given content and encoding.</doc>
+<kw name="Create Binary File" library="OperatingSystem">
+<doc>Creates a binary file with the given content.</doc>
 <arguments>
 <arg>${save_response_location}${saved_response}</arg>
 <arg>${pretty_printed_response}</arg>
 </arguments>
-<msg timestamp="20180903 23:24:12.825" level="INFO" html="yes">Created file '&lt;a href="file://C:\Users\petri.ryynanen\gitRobot_Framework_REST\Robot_Framework_REST\expected\Get_response.json"&gt;C:\Users\petri.ryynanen\gitRobot_Framework_REST\Robot_Framework_REST\expected\Get_response.json&lt;/a&gt;'.</msg>
-<status status="PASS" starttime="20180903 23:24:12.809" endtime="20180903 23:24:12.825"></status>
-</kw>
-<kw name="Get File" library="OperatingSystem">
-<doc>Returns the contents of a specified file.</doc>
-<arguments>
-<arg>${expected_location}${expected_response}</arg>
-</arguments>
-<assign>
-<var>${expected_response}</var>
-</assign>
-<msg timestamp="20180903 23:24:12.829" level="INFO" html="yes">Getting file '&lt;a href="file://C:\Users\petri.ryynanen\gitRobot_Framework_REST\Robot_Framework_REST\expected\Get_response.json"&gt;C:\Users\petri.ryynanen\gitRobot_Framework_REST\Robot_Framework_REST\expected\Get_response.json&lt;/a&gt;'.</msg>
-<msg timestamp="20180903 23:24:12.831" level="INFO">${expected_response} = {
-    "data": [
-        {
-            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg",
-            "first_name": "Eve",
-            "id": 4,
-            "last_name": "H...</msg>
-<status status="PASS" starttime="20180903 23:24:12.826" endtime="20180903 23:24:12.831"></status>
+<msg timestamp="20180904 23:43:24.619" level="INFO" html="yes">Created binary file '&lt;a href="file://C:\Users\petri.ryynanen\git\Robot_Framework_REST\Robot_Framework_REST\Responses\Put_response.json"&gt;C:\Users\petri.ryynanen\git\Robot_Framework_REST\Robot_Framework_REST\Responses\Put_response.json&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20180904 23:43:24.611" endtime="20180904 23:43:24.619"></status>
 </kw>
 <kw name="Get File" library="OperatingSystem">
 <doc>Returns the contents of a specified file.</doc>
@@ -106,39 +106,114 @@
 <arg>${save_response_location}${saved_response}</arg>
 </arguments>
 <assign>
-<var>${saved_response2}</var>
+<var>${response_to_be_edited}</var>
 </assign>
-<msg timestamp="20180903 23:24:12.834" level="INFO" html="yes">Getting file '&lt;a href="file://C:\Users\petri.ryynanen\gitRobot_Framework_REST\Robot_Framework_REST\expected\Get_response.json"&gt;C:\Users\petri.ryynanen\gitRobot_Framework_REST\Robot_Framework_REST\expected\Get_response.json&lt;/a&gt;'.</msg>
-<msg timestamp="20180903 23:24:12.835" level="INFO">${saved_response2} = {
-    "data": [
-        {
-            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg",
-            "first_name": "Eve",
-            "id": 4,
-            "last_name": "H...</msg>
-<status status="PASS" starttime="20180903 23:24:12.832" endtime="20180903 23:24:12.835"></status>
+<msg timestamp="20180904 23:43:24.619" level="INFO" html="yes">Getting file '&lt;a href="file://C:\Users\petri.ryynanen\git\Robot_Framework_REST\Robot_Framework_REST\Responses\Put_response.json"&gt;C:\Users\petri.ryynanen\git\Robot_Framework_REST\Robot_Framework_REST\Responses\Put_response.json&lt;/a&gt;'.</msg>
+<msg timestamp="20180904 23:43:24.619" level="INFO">${response_to_be_edited} = {
+    "createdAt": "2018-09-04T20:45:29.231Z",
+    "id": "109"
+}</msg>
+<status status="PASS" starttime="20180904 23:43:24.619" endtime="20180904 23:43:24.619"></status>
 </kw>
-<kw name="Diff Outputs" library="DiffLibrary">
-<doc>Diff between target and source texts</doc>
+<kw name="Replace String Using Regexp" library="String">
+<doc>Replaces ``pattern`` in the given ``string`` with ``replace_with``.</doc>
 <arguments>
-<arg>${saved_response2}</arg>
+<arg>${response_to_be_edited}</arg>
+<arg>2018....................</arg>
+<arg>edited_date</arg>
+</arguments>
+<assign>
+<var>${edited_response}</var>
+</assign>
+<msg timestamp="20180904 23:43:24.623" level="INFO">${edited_response} = {
+    "createdAt": "edited_date",
+    "id": "109"
+}</msg>
+<status status="PASS" starttime="20180904 23:43:24.619" endtime="20180904 23:43:24.623"></status>
+</kw>
+<kw name="Replace String Using Regexp" library="String">
+<doc>Replaces ``pattern`` in the given ``string`` with ``replace_with``.</doc>
+<arguments>
+<arg>${edited_response}</arg>
+<arg>\\d\\d{1,3}</arg>
+<arg>edited_id</arg>
+</arguments>
+<assign>
+<var>${final_response}</var>
+</assign>
+<msg timestamp="20180904 23:43:24.623" level="INFO">${final_response} = {
+    "createdAt": "edited_date",
+    "id": "edited_id"
+}</msg>
+<status status="PASS" starttime="20180904 23:43:24.623" endtime="20180904 23:43:24.623"></status>
+</kw>
+<kw name="Create Binary File" library="OperatingSystem">
+<doc>Creates a binary file with the given content.</doc>
+<arguments>
+<arg>${save_response_location}${saved_response}</arg>
+<arg>${final_response}</arg>
+</arguments>
+<msg timestamp="20180904 23:43:24.627" level="INFO" html="yes">Created binary file '&lt;a href="file://C:\Users\petri.ryynanen\git\Robot_Framework_REST\Robot_Framework_REST\Responses\Put_response.json"&gt;C:\Users\petri.ryynanen\git\Robot_Framework_REST\Robot_Framework_REST\Responses\Put_response.json&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20180904 23:43:24.623" endtime="20180904 23:43:24.627"></status>
+</kw>
+<kw name="Get File" library="OperatingSystem">
+<doc>Returns the contents of a specified file.</doc>
+<arguments>
+<arg>${save_response_location}${saved_response}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20180904 23:43:24.627" level="INFO" html="yes">Getting file '&lt;a href="file://C:\Users\petri.ryynanen\git\Robot_Framework_REST\Robot_Framework_REST\Responses\Put_response.json"&gt;C:\Users\petri.ryynanen\git\Robot_Framework_REST\Robot_Framework_REST\Responses\Put_response.json&lt;/a&gt;'.</msg>
+<msg timestamp="20180904 23:43:24.631" level="INFO">${response} = {
+    "createdAt": "edited_date",
+    "id": "edited_id"
+}</msg>
+<status status="PASS" starttime="20180904 23:43:24.627" endtime="20180904 23:43:24.631"></status>
+</kw>
+<kw name="Get File" library="OperatingSystem">
+<doc>Returns the contents of a specified file.</doc>
+<arguments>
 <arg>${expected_location}${expected_response}</arg>
 </arguments>
-<msg timestamp="20180903 23:24:12.850" level="INFO">file1: C:\Users\PETRI~1.RYY\AppData\Local\Temp\tmpmu5wznah.txt</msg>
-<msg timestamp="20180903 23:24:12.850" level="INFO">file2: C:\Users\PETRI~1.RYY\AppData\Local\Temp\tmp82hfrod3.txt</msg>
-<msg timestamp="20180903 23:24:12.851" level="INFO">c:\python37-32\lib\site-packages\DiffLibrary\bin\diff\diff.exe --strip-trailing-cr  "C:\Users\PETRI~1.RYY\AppData\Local\Temp\tmpmu5wznah.txt" "C:\Users\PETRI~1.RYY\AppData\Local\Temp\tmp82hfrod3.txt"</msg>
-<msg timestamp="20180903 23:24:13.242" level="INFO">1c1
-&lt; {
----
-&gt; C:\Users\petri.ryynanen\gitRobot_Framework_REST\Robot_Framework_REST\expected\{</msg>
-<msg timestamp="20180903 23:24:13.249" level="FAIL">differences found between C:\Users\PETRI~1.RYY\AppData\Local\Temp\tmpmu5wznah.txt and C:\Users\PETRI~1.RYY\AppData\Local\Temp\tmp82hfrod3.txt</msg>
-<status status="FAIL" starttime="20180903 23:24:12.836" endtime="20180903 23:24:13.249"></status>
+<assign>
+<var>${expected}</var>
+</assign>
+<msg timestamp="20180904 23:43:24.631" level="INFO" html="yes">Getting file '&lt;a href="file://C:\Users\petri.ryynanen\git\Robot_Framework_REST\Robot_Framework_REST\Expected\Put_expected.json"&gt;C:\Users\petri.ryynanen\git\Robot_Framework_REST\Robot_Framework_REST\Expected\Put_expected.json&lt;/a&gt;'.</msg>
+<msg timestamp="20180904 23:43:24.635" level="INFO">${expected} = {
+    "createdAt": "edited_date",
+    "id": "edited_id"
+}</msg>
+<status status="PASS" starttime="20180904 23:43:24.631" endtime="20180904 23:43:24.635"></status>
 </kw>
-<status status="FAIL" starttime="20180903 23:24:12.253" endtime="20180903 23:24:13.250"></status>
+<kw name="Diff Files" library="DiffLibrary">
+<doc>Diff two text files</doc>
+<arguments>
+<arg>${response}</arg>
+<arg>${expected}</arg>
+</arguments>
+<msg timestamp="20180904 23:43:24.639" level="INFO">file1: {
+    "createdAt": "edited_date",
+    "id": "edited_id"
+}</msg>
+<msg timestamp="20180904 23:43:24.639" level="INFO">file2: {
+    "createdAt": "edited_date",
+    "id": "edited_id"
+}</msg>
+<msg timestamp="20180904 23:43:24.643" level="FAIL">{
+    "createdAt": "edited_date",
+    "id": "edited_id"
+} doesn't exist</msg>
+<status status="FAIL" starttime="20180904 23:43:24.635" endtime="20180904 23:43:24.643"></status>
 </kw>
-<status status="FAIL" starttime="20180903 23:24:12.253" endtime="20180903 23:24:13.252" critical="yes">differences found between C:\Users\PETRI~1.RYY\AppData\Local\Temp\tmpmu5wznah.txt and C:\Users\PETRI~1.RYY\AppData\Local\Temp\tmp82hfrod3.txt</status>
+<status status="FAIL" starttime="20180904 23:43:24.095" endtime="20180904 23:43:24.643"></status>
+</kw>
+<status status="FAIL" starttime="20180904 23:43:24.095" endtime="20180904 23:43:24.651" critical="yes">{
+    "createdAt": "edited_date",
+    "id": "edited_id"
+} doesn't exist</status>
 </test>
-<status status="FAIL" starttime="20180903 23:24:12.051" endtime="20180903 23:24:13.255"></status>
+<status status="FAIL" starttime="20180904 23:43:23.915" endtime="20180904 23:43:24.651"></status>
 </suite>
 <statistics>
 <total>
@@ -148,7 +223,7 @@
 <tag>
 </tag>
 <suite>
-<stat pass="0" fail="1" id="s1" name="Get">Get</stat>
+<stat pass="0" fail="1" id="s1" name="Put">Put</stat>
 </suite>
 </statistics>
 <errors>
