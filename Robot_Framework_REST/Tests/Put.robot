@@ -22,14 +22,14 @@ Test run
     Should Be Equal As Strings    ${response.status_code}    201   
     Should Contain    ${response.text}    createdAt   
     ${pretty_printed_response}    To Json    ${response.text}    true    
-    Create Binary File    ${save_response_location}${saved_response}  ${pretty_printed_response}
+    Create binary File    ${save_response_location}${saved_response}  ${pretty_printed_response}
     ${response_to_be_edited}    Get File    ${save_response_location}${saved_response}
     ${edited_response}    Replace String Using Regexp    ${response_to_be_edited}    2018....................    edited_date
     ${final_response}    Replace String Using Regexp    ${edited_response}    \\d\\d{1,3}    edited_id
     Create Binary File    ${save_response_location}${saved_response}    ${final_response}
     ${response}    Get File    ${save_response_location}${saved_response}     
     ${expected}    Get File    ${expected_location}${expected_response} 
-    Diff Files    ${response}     ${expected}        
+    Should Be Equal As Strings    ${response}    ${expected}         
 
 *** Test Cases ***
 Put test
