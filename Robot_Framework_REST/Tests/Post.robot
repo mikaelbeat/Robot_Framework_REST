@@ -3,7 +3,7 @@ Library    RequestsLibrary
 Library    OperatingSystem      
 
 *** Variables ***
-${payload_location}    C:\\Users\\petri.ryynanen\\git\\Robot_Framework_REST\\Robot_Framework_REST\\Payloads\\
+${payload_location}    Payloads
 ${payload}    Create_user.Json 
 
 *** Keywords ***

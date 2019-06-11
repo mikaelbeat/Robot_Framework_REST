@@ -5,11 +5,11 @@ Library    String
 Library    DiffLibrary      
 
 *** Variables ***
-${payload_location}    C:\\Users\\petri.ryynanen\\git\\Robot_Framework_REST\\Robot_Framework_REST\\Payloads\\
+${payload_location}    Payloads
 ${payload}    Update_user.Json 
-${expected_location}    C:\\Users\\petri.ryynanen\\git\\Robot_Framework_REST\\Robot_Framework_REST\\Expected\\
+${expected_location}    Expected
 ${expected_response}    Put_expected.json
-${save_response_location}    C:\\Users\\petri.ryynanen\\git\\Robot_Framework_REST\\Robot_Framework_REST\\Responses\\
+${save_response_location}    Responses
 ${saved_response}    Put_response.json
 
 *** Keywords ***

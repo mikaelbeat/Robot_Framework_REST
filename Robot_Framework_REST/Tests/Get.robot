@@ -4,9 +4,9 @@ Library    OperatingSystem
 Library    DiffLibrary     
 
 *** Variables ***
-${expected_location}    C:\\Users\\petri.ryynanen\\git\\Robot_Framework_REST\\Robot_Framework_REST\\Expected\\
+${expected_location}    Expected
 ${expected_response}    Get_expected.json
-${save_response_location}    C:\\Users\\petri.ryynanen\\git\\Robot_Framework_REST\\Robot_Framework_REST\\Responses\\
+${save_response_location}    Responses
 ${saved_response}    Get_response.json 
 
 *** Keywords ***
